@@ -18,6 +18,12 @@ func init() {
 	config.LoadEnvVariables()
 }
 
+func helloController(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Hello World!",
+	})
+}
+
 func main() {
 
 	client := config.NewMongoClient()
@@ -25,21 +31,15 @@ func main() {
 	database := client.Connect()
 	defer client.Disconnect()
 
-	// Create a new instance of the environment
 	env := Env{
 		database: database,
 		router:   gin.Default(),
 	}
 
-	env.router.GET("/", func(c *gin.Context) {
-		c.JSON(http.StatusOK, gin.H{
-			"message": "pong",
-		})
-	})
+	env.router.GET("/", helloController)
 
 	post.SetUpPostModel(env.router.Group("/posts"), database)
 
-	// Run the server
 	env.router.Run()
 
 }

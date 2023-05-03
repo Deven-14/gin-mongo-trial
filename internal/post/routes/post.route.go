@@ -6,12 +6,16 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+type PostRouter interface {
+	interfaces.Router
+}
+
 type postRouter struct {
 	router     *gin.RouterGroup
 	controller controllers.PostController
 }
 
-func NewPostRouter(router *gin.RouterGroup, controller controllers.PostController) interfaces.Router {
+func NewPostRouter(router *gin.RouterGroup, controller controllers.PostController) PostRouter {
 	return &postRouter{router, controller}
 }
 
