@@ -24,7 +24,3 @@ type Controllers interface {
 type Router interface {
 	RegisterRoutes()
 }
-
-type Routers interface {
-	Router
-}

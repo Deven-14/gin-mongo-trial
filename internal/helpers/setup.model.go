@@ -6,7 +6,7 @@ import (
 	"go.mongodb.org/mongo-driver/mongo"
 )
 
-func SetUpModel[R interfaces.Routers, C interfaces.Controllers, S interfaces.Services, Re interfaces.Repositories](
+func SetUpModel[R interfaces.Router, C interfaces.Controllers, S interfaces.Services, Re interfaces.Repositories](
 	database *mongo.Database,
 	routerGroup *gin.RouterGroup,
 	newRepository func(*mongo.Database) Re,
