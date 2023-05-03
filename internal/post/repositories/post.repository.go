@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/Deven-14/gin-mongo-trial/internal/models"
+	"github.com/Deven-14/gin-mongo-trial/internal/post/models"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"
 )

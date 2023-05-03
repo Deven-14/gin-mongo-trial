@@ -3,15 +3,13 @@ package controllers
 import (
 	"net/http"
 
-	"github.com/Deven-14/gin-mongo-trial/internal/models"
-	"github.com/Deven-14/gin-mongo-trial/internal/services"
+	"github.com/Deven-14/gin-mongo-trial/internal/post/models"
+	"github.com/Deven-14/gin-mongo-trial/internal/post/services"
 	"github.com/gin-gonic/gin"
 )
 
 type PostController interface {
-	// Create a new post
 	CreatePost(c *gin.Context)
-	// Get all posts
 	GetPosts(c *gin.Context)
 }
 

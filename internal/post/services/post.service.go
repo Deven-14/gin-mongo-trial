@@ -1,8 +1,8 @@
 package services
 
 import (
-	"github.com/Deven-14/gin-mongo-trial/internal/models"
-	"github.com/Deven-14/gin-mongo-trial/internal/repositories"
+	"github.com/Deven-14/gin-mongo-trial/internal/post/models"
+	"github.com/Deven-14/gin-mongo-trial/internal/post/repositories"
 )
 
 type PostService interface {
